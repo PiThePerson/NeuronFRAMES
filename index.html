@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeuronFRAMES | The new Era of Rehabilitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      .gradient-bg {
+        background: linear-gradient(135deg, #1a75ff 0%, #00d4ff 100%);
+      }
+
+      .mode-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #3b82f6;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .progress-bar {
+        transition: width 1s ease-in-out;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .floating {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0 flex items-center">
+              <img class="h-10 w-auto" src="nfl.png" alt="NeuronFRAMES Logo" />
+              <span class="ml-2 text-xl font-bold text-blue-600"></span>
+            </div>
+            <div class="hidden md:ml-10 md:flex md:space-x-8">
+              <a
+                href="#home"
+                class="nav-link text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-blue-500 text-sm font-medium"
+                >Home</a
+              >
+              <a
+                href="#about"
+                class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium"
+                >About</a
+              >
+              <a
+                href="#modes"
+                class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium"
+                >Modes</a
+              >
+              <a
+                href="#features"
+                class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium"
+                >Features</a
+              >
+              <!-- <a
+                href="#demo"
+                class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium"
+                >Demo</a
+              > -->
+              <a
+                href="#contact"
+                class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium"
+                >Contact</a
+              >
+            </div>
+          </div>
+          <div class="hidden md:ml-6 md:flex md:items-center">
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300"
+            >
+              Get Started
+            </button>
+          </div>
+          <div class="-mr-2 flex items-center md:hidden">
+            <button
+              type="button"
+              id="mobile-menu-button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+            >
+              <span class="sr-only">Open main menu</span>
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden">
+        <div class="pt-2 pb-3 space-y-1">
+          <a
+            href="#home"
+            class="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            >About</a
+          >
+          <a
+            href="#modes"
+            class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            >Modes</a
+          >
+          <a
+            href="#features"
+            class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            >Features</a
+          >
+          <a
+            href="#demo"
+            class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            >Demo</a
+          >
+          <a
+            href="#contact"
+            class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+            >Contact</a
+          >
+        </div>
+        <div class="pt-4 pb-3 border-t border-gray-200">
+          <div class="mt-3 space-y-1">
+            <button
+              class="block w-full px-4 py-2 text-base font-medium text-center text-white bg-blue-600 hover:bg-blue-700 rounded-md"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+          <div class="mb-12 lg:mb-0">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+              The New Era of <span class="text-yellow-300">Rehabilitation</span>
+            </h1>
+            <p class="text-xl mb-8">
+              AI-powered physical therapy that is engaging, effective, and
+              accessible from the comfort of your home.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+            >
+              <button
+                class="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold text-lg transition duration-300"
+              >
+                Try Free Demo
+              </button>
+              <button
+                class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-lg font-semibold text-lg transition duration-300"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="relative">
+            <img
+              src="teedej.jpg"
+              alt="NeuronFRAMES in action"
+              class="rounded-xl shadow-2xl floating"
+            />
+            <div
+              class="absolute -bottom-6 -left-6 bg-yellow-400 text-gray-800 px-4 py-2 rounded-lg shadow-lg"
+            >
+              <span class="font-bold">80%</span> of patients fail rehabilitation
+              due to boredom
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Why NeuronFRAMES?
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Traditional rehabilitation methods often fail to engage patients
+            long-term, leading to poor outcomes.
+          </p>
+          <p class="text-xl text-blue-600 max-w-3xl mx-auto">
+            We're changing that.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-heartbeat text-blue-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">The Challenge</h3>
+            <p class="text-gray-600">
+              Traditional rehabilitation is often repetitive, boring, and lacks
+              real-time feedback. Patients struggle with motivation and proper
+              form without professional guidance.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-lightbulb text-blue-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Our Solution</h3>
+            <p class="text-gray-600">
+              NeuronFRAMES combines AI and pose detection with engaging gamified
+              therapy to make rehabilitation effective, accessible, and
+              enjoyable.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-rocket text-blue-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">The Result</h3>
+            <p class="text-gray-600">
+              Patients stay engaged longer, perform exercises correctly with
+              real-time feedback, and achieve better outcomes in less time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modes Section -->
+    <section id="modes" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Our Therapy Modes
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Three powerful approaches to meet different rehabilitation needs
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- EPT Card -->
+          <div
+            class="mode-card bg-white p-6 rounded-xl shadow-md transition duration-300"
+          >
+            <div
+              class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-dumbbell text-blue-600 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">
+              Enhanced Physical Therapy (EPT)
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Traditional exercises enhanced with AI-powered real-time form
+              correction and progress tracking.
+            </p>
+            <div class="bg-blue-50 p-4 rounded-lg mb-4">
+              <p class="text-sm text-blue-800 font-medium">
+                <i class="fas fa-user-md mr-2"></i>Best for: Post-surgery
+                recovery, injury rehabilitation
+              </p>
+            </div>
+            <button
+              class="text-blue-600 hover:text-blue-800 font-medium flex items-center"
+            >
+              Learn more <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+
+          <!-- GPT Card -->
+          <div
+            class="mode-card bg-white p-6 rounded-xl shadow-md transition duration-300"
+          >
+            <div
+              class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-gamepad text-blue-600 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">
+              Gamified Physical Therapy (GPT)
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Turn therapy into engaging games that motivate patients while
+              ensuring proper movement patterns.
+            </p>
+            <div class="bg-blue-50 p-4 rounded-lg mb-4">
+              <p class="text-sm text-blue-800 font-medium">
+                <i class="fas fa-child mr-2"></i>Best for: Pediatric therapy,
+                long-term conditions
+              </p>
+            </div>
+            <button
+              class="text-blue-600 hover:text-blue-800 font-medium flex items-center"
+            >
+              Learn more <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+
+          <!-- ITS Card -->
+          <div
+            class="mode-card bg-white p-6 rounded-xl shadow-md transition duration-300"
+          >
+            <div
+              class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-brain text-blue-600 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">
+              Interactive Therapeutic Systems (ITS)
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Combines physical movement with cognitive challenges for
+              comprehensive neurological rehabilitation.
+            </p>
+            <div class="bg-blue-50 p-4 rounded-lg mb-4">
+              <p class="text-sm text-blue-800 font-medium">
+                <i class="fas fa-head-side-virus mr-2"></i>Best for: Stroke
+                recovery, neurological conditions
+              </p>
+            </div>
+            <button
+              class="text-blue-600 hover:text-blue-800 font-medium flex items-center"
+            >
+              Learn more <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+          <!-- SIT Card -->
+          <div
+  class="mode-card bg-white p-6 rounded-xl shadow-md transition duration-300"
+>
+  <div
+    class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-4"
+  >
+    <i class="fas fa-microphone-alt text-blue-600 text-xl"></i>
+  </div>
+  <h3 class="text-xl font-semibold mb-3">
+    Speech Improvement Therapy (SIT)
+  </h3>
+  <p class="text-gray-600 mb-4">
+    Voice-driven games and pronunciation exercises designed to enhance speech clarity and confidence.
+  </p>
+  <div class="bg-blue-50 p-4 rounded-lg mb-4">
+    <p class="text-sm text-blue-800 font-medium">
+      <i class="fas fa-comment-medical mr-2"></i>Best for: Articulation training, post-stroke speech recovery, speech delays
+    </p>
+  </div>
+  <button
+    class="text-blue-600 hover:text-blue-800 font-medium flex items-center"
+  >
+    Learn more <i class="fas fa-arrow-right ml-2"></i>
+  </button>
+</div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Powerful Features
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            What makes NeuronFRAMES different from traditional rehabilitation
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">
+              Adaptive Friendly Training
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Our system automatically adjusts difficulty based on your
+              performance, ensuring you're always challenged but never
+              overwhelmed.
+            </p>
+
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm font-medium text-gray-700"
+                    >Exercise Difficulty</span
+                  >
+                  <span class="text-sm font-medium text-gray-700"
+                    >Adapts in real-time</span
+                  >
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm font-medium text-gray-700"
+                    >Movement Range</span
+                  >
+                  <span class="text-sm font-medium text-gray-700"
+                    >Personalized to you</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-100 rounded-xl overflow-hidden">
+            <img
+              src="AFT icons.png"
+              alt="Adaptive training visualization"
+              class="w-full h-auto"
+            />
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div class="order-1 md:order-2">
+            <h3 class="text-2xl font-semibold mb-4">AI Pose Shadow</h3>
+            <p class="text-gray-600 mb-6">
+              See exactly how your movements compare to the ideal form with our
+              real-time AI overlay technology.
+            </p>
+
+            <div class="flex items-start mb-4">
+              <div class="bg-blue-100 p-2 rounded-full mr-4">
+                <i class="fas fa-check-circle text-blue-600"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900">Real-time Correction</h4>
+                <p class="text-gray-600 text-sm">
+                  Instant feedback on your form to prevent injury and maximize
+                  effectiveness
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-blue-100 p-2 rounded-full mr-4">
+                <i class="fas fa-chart-line text-blue-600"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900">
+                  Progress Visualization
+                </h4>
+                <p class="text-gray-600 text-sm">
+                  See how your range of motion improves over time with detailed
+                  analytics
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="order-2 md:order-1 bg-gray-100 rounded-xl overflow-hidden"
+          >
+            <img
+              src="aiposeshadow.png"
+              alt="AI Pose Shadow visualization"
+              class="w-full h-auto"
+            />
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">
+              Feedback & Progress Tracking
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Comprehensive analytics and motivational tracking to keep you
+              engaged and informed about your rehabilitation journey.
+            </p>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <div class="text-blue-600 mb-2">
+                  <i class="fas fa-calendar-check text-2xl"></i>
+                </div>
+                <h4 class="font-medium">Consistency Tracking</h4>
+                <p class="text-gray-600 text-sm">
+                  Track your streak and session frequency
+                </p>
+              </div>
+
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <div class="text-blue-600 mb-2">
+                  <i class="fas fa-trophy text-2xl"></i>
+                </div>
+                <h4 class="font-medium">Achievements</h4>
+                <p class="text-gray-600 text-sm">
+                  Earn badges for milestones and progress
+                </p>
+              </div>
+
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <div class="text-blue-600 mb-2">
+                  <i class="fas fa-chart-pie text-2xl"></i>
+                </div>
+                <h4 class="font-medium">Detailed Analytics</h4>
+                <p class="text-gray-600 text-sm">
+                  See your improvement over time
+                </p>
+              </div>
+
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <div class="text-blue-600 mb-2">
+                  <i class="fas fa-share-alt text-2xl"></i>
+                </div>
+                <h4 class="font-medium">Share Progress</h4>
+                <p class="text-gray-600 text-sm">
+                  With your therapist or support network
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-100 rounded-xl overflow-hidden">
+            <img
+              src="sessionsrecord.png"
+              alt="Progress tracking visualization"
+              class="w-full h-auto"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Section -->
+    
+    <section id="demo" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">See It In Action</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Watch how NeuronFRAMES transforms rehabilitation into an engaging,
+            effective experience
+          </p>
+        </div>
+    
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+          <!-- Demo Card Template -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-md">
+            <div class="relative pt-[56.25%]">
+              <video
+                id="ept-video"
+                src="eptdemo.mp4"
+                class="absolute top-0 left-0 w-full h-full object-cover"
+                muted
+                playsinline
+              ></video>
+              <div
+                id="ept-overlay"
+                class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"
+              >
+                <button
+                  onclick="playVideo('ept-video', 'ept-overlay')"
+                  class="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full w-16 h-16 flex items-center justify-center transition duration-300"
+                >
+                  <i class="fas fa-play text-blue-600 text-xl"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Enhanced Physical Therapy Demo</h3>
+              <p class="text-gray-600">
+                See how our AI guides proper form during traditional exercises
+              </p>
+            </div>
+          </div>
+    
+          <div class="bg-white rounded-xl overflow-hidden shadow-md">
+            <div class="relative pt-[56.25%]">
+              <video
+                id="gpt-video"
+                src="gptdemo.mp4"
+                class="absolute top-0 left-0 w-full h-full object-cover"
+                muted
+                playsinline
+              ></video>
+              <div
+                id="gpt-overlay"
+                class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"
+              >
+                <button
+                  onclick="playVideo('gpt-video', 'gpt-overlay')"
+                  class="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full w-16 h-16 flex items-center justify-center transition duration-300"
+                >
+                  <i class="fas fa-play text-blue-600 text-xl"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Gamified Therapy Demo</h3>
+              <p class="text-gray-600">
+                Watch how therapy becomes an engaging game experience
+              </p>
+            </div>
+          </div>
+    
+          <div class="bg-white rounded-xl overflow-hidden shadow-md">
+            <div class="relative pt-[56.25%]">
+              <video
+                id="its-video"
+                src="its demo.mp4"
+                class="absolute top-0 left-0 w-full h-full object-cover"
+                muted
+                playsinline
+              ></video>
+              <div
+                id="its-overlay"
+                class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"
+              >
+                <button
+                  onclick="playVideo('its-video', 'its-overlay')"
+                  class="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full w-16 h-16 flex items-center justify-center transition duration-300"
+                >
+                  <i class="fas fa-play text-blue-600 text-xl"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Interactive Systems Demo</h3>
+              <p class="text-gray-600">
+                See cognitive and physical therapy combined
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl overflow-hidden shadow-md">
+            <div class="relative pt-[56.25%]">
+              <video
+                id="sit-video"
+                src="SIT_demo.mp4"
+                class="absolute top-0 left-0 w-full h-full object-cover"
+                muted
+                playsinline
+              ></video>
+              <div
+                id="sit-overlay"
+                class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center"
+              >
+                <button
+                  onclick="playVideo('sit-video', 'sit-overlay')"
+                  class="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full w-16 h-16 flex items-center justify-center transition duration-300"
+                >
+                  <i class="fas fa-play text-blue-600 text-xl"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Speech Improvement Therapy Demo</h3>
+              <p class="text-gray-600">
+                Watch how AI analyzes to let patients train with their speech
+              </p>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Testimonials Section (unchanged) -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div class="md:flex">
+            <div class="md:w-1/2 bg-blue-600 text-white p-12 flex flex-col justify-center">
+              <h3 class="text-2xl font-bold mb-4">
+                Ready to experience the future of rehabilitation?
+              </h3>
+              <p class="mb-6">
+                Sign up for a free demo session and see how NeuronFRAMES can
+                transform your therapy journey.
+              </p>
+              <button
+                class="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold text-lg transition duration-300 w-full md:w-auto"
+              >
+                Schedule Free Demo
+              </button>
+            </div>
+            <div class="md:w-1/2 p-12">
+              <h3 class="text-2xl font-bold mb-4 text-gray-900">
+                What our users say
+              </h3>
+    
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <img
+                    src="https://via.placeholder.com/50x50"
+                    alt="User"
+                    class="w-12 h-12 rounded-full mr-4"
+                  />
+                  <div>
+                    <div class="flex mb-1">
+                      <i class="fas fa-star text-yellow-400"></i>
+                      <i class="fas fa-star text-yellow-400"></i>
+                      <i class="fas fa-star text-yellow-400"></i>
+                      <i class="fas fa-star text-yellow-400"></i>
+                      <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-2">
+                      "After my knee surgery, NeuronFRAMES kept me motivated
+                      with its game-like exercises. My therapist was impressed
+                      with how quickly I regained mobility."
+                    </p>
+                    <p class="font-medium text-gray-900">- Teeradej D., Elderly Patient</p>
+                  </div>
+                </div>
+    
+                <div class="flex items-start">
+                  <img
+                    src="https://via.placeholder.com/50x50"
+                    alt="User"
+                    class="w-12 h-12 rounded-full mr-4"
+                  />
+                  <div>
+                    <div class="flex mb-1">
+                      <i class="fas fa-star text-yellow-400"></i>
+                      <i class="fas fa-star text-yellow-400"></i>
+                      <i class="fas fa-star text-yellow-400"></i>
+                      <i class="fas fa-star text-yellow-400"></i>
+                      <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-2">
+                      "As a physical therapist, I've seen much better compliance
+                      and outcomes since recommending NeuronFRAMES to my
+                      patients."
+                    </p>
+                    <p class="font-medium text-gray-900">- Dr. Thanakorn I., DPT</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <script>
+      function playVideo(videoId, overlayId) {
+        const video = document.getElementById(videoId);
+        const overlay = document.getElementById(overlayId);
+    
+        video.play();
+        overlay.style.display = "none";
+    
+        // Show overlay again when video ends
+        video.onended = () => {
+          overlay.style.display = "flex";
+        };
+      }
+    </script>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Everything you need to know about NeuronFRAMES
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <div class="space-y-4">
+            <div class="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition duration-300"
+              >
+                <h3 class="text-lg font-medium text-gray-900">
+                  Is NeuronFRAMES safe to use without supervision?
+                </h3>
+                <i
+                  class="fas fa-chevron-down text-blue-600 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-content hidden px-6 pb-6">
+                <p class="text-gray-600">
+                  Yes, NeuronFRAMES is designed with safety as a top priority.
+                  Our AI Pose Shadow technology provides real-time feedback to
+                  ensure you're performing exercises correctly, similar to
+                  having a therapist guide you. However, we always recommend
+                  consulting with your healthcare provider before starting any
+                  new rehabilitation program.
+                </p>
+              </div>
+            </div>
+
+            <div class="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition duration-300"
+              >
+                <h3 class="text-lg font-medium text-gray-900">
+                  What devices are compatible with NeuronFRAMES?
+                </h3>
+                <i
+                  class="fas fa-chevron-down text-blue-600 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-content hidden px-6 pb-6">
+                <p class="text-gray-600">
+                  NeuronFRAMES works with most modern devices including Windows
+                  PCs, Macs, iOS and Android tablets. You'll need a device with
+                  a camera for the AI tracking features. We recommend using a
+                  tablet or computer for the best experience, but the system
+                  will adapt to smaller screens as well.
+                </p>
+              </div>
+            </div>
+
+            <div class="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition duration-300"
+              >
+                <h3 class="text-lg font-medium text-gray-900">
+                  How does NeuronFRAMES protect my privacy?
+                </h3>
+                <i
+                  class="fas fa-chevron-down text-blue-600 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-content hidden px-6 pb-6">
+                <p class="text-gray-600">
+                  We take privacy very seriously. All video processing happens
+                  locally on your device - we never send your video data to our
+                  servers. Your progress data is encrypted and you have full
+                  control over what information is shared with your healthcare
+                  providers. We comply with all relevant healthcare privacy
+                  regulations.
+                </p>
+              </div>
+            </div>
+
+            <div class="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition duration-300"
+              >
+                <h3 class="text-lg font-medium text-gray-900">
+                  Can I use NeuronFRAMES with my existing therapy plan?
+                </h3>
+                <i
+                  class="fas fa-chevron-down text-blue-600 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-content hidden px-6 pb-6">
+                <p class="text-gray-600">
+                  Absolutely! NeuronFRAMES is designed to complement traditional
+                  therapy. Many healthcare providers use our system to extend
+                  care between in-person sessions. You can input your prescribed
+                  exercises or choose from our library of therapist-approved
+                  routines. Your progress data can be easily shared with your
+                  care team.
+                </p>
+              </div>
+            </div>
+
+            <div class="border border-gray-200 rounded-lg overflow-hidden">
+              <button
+                class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition duration-300"
+              >
+                <h3 class="text-lg font-medium text-gray-900">
+                  Is there scientific evidence supporting this approach?
+                </h3>
+                <i
+                  class="fas fa-chevron-down text-blue-600 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-content hidden px-6 pb-6">
+                <p class="text-gray-600">
+                  Yes, the principles behind NeuronFRAMES are backed by
+                  extensive research. Gamification has been shown to increase
+                  therapy adherence by up to 300% in some studies. Real-time
+                  feedback improves movement accuracy, and the combination of
+                  cognitive and physical challenges is particularly effective
+                  for neurological rehabilitation. We're continuously
+                  collaborating with research institutions to validate and
+                  improve our methods.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!--
+          <div class="mt-12 text-center">
+            <p class="text-gray-600 mb-6">
+              Still have questions? We're here to help.
+            </p>
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300"
+            >
+              Contact Our Support Team
+            </button>
+          </div>
+        --></div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+          <div class="mb-12 lg:mb-0">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+            <p class="text-gray-600 mb-8">
+              Whether you're a patient, therapist, researcher, or potential
+              partner, we'd love to hear from you.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-hospital text-blue-600"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">
+                    For Healthcare Providers
+                  </h4>
+                  <p class="text-gray-600">
+                    Learn how to integrate NeuronFRAMES into your practice
+                  </p>
+                  <a
+                    href="#"
+                    class="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                    >Contact our medical team →</a
+                  >
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-flask text-blue-600"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">For Researchers</h4>
+                  <p class="text-gray-600">
+                    Explore collaboration opportunities and clinical studies
+                  </p>
+                  <a
+                    href="#"
+                    class="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                    >Contact our research team →</a
+                  >
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-handshake text-blue-600"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">Partnerships</h4>
+                  <p class="text-gray-600">
+                    Discover how we can work together to improve rehabilitation
+                  </p>
+                  <a
+                    href="#"
+                    class="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                    >Contact our business team →</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--
+          <div class="bg-white rounded-xl shadow-md p-8">
+            <h3 class="text-xl font-semibold mb-6">Send Us a Message</h3>
+            <form>
+              <div class="mb-4">
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="subject"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Subject</label
+                >
+                <select
+                  id="subject"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                >
+                  <option>General Inquiry</option>
+                  <option>Healthcare Provider</option>
+                  <option>Research Collaboration</option>
+                  <option>Partnership Opportunity</option>
+                  <option>Technical Support</option>
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300"
+              >
+                Send Message
+              </button>
+            -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <h3 class="text-lg font-semibold mb-4">NeuronFRAMES</h3>
+            <p class="text-gray-400">
+              Rehabilitation reimagined through AI-powered, gamified therapy
+              solutions for better outcomes and patient engagement.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#modes"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Modes</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#features"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#demo"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Demo</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Resources</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Documentation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Research Papers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Case Studies</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Support</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+            <div class="flex space-x-4 mb-4">
+              <a
+                href="#"
+                class="bg-gray-800 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-800 hover:bg-blue-400 w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-800 hover:bg-pink-600 w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-800 hover:bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center transition duration-300"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+            <p class="text-gray-400">Subscribe to our newsletter</p>
+            <div class="mt-2 flex">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="px-4 py-2 bg-gray-800 text-white rounded-l-lg focus:outline-none w-full"
+              />
+              <button
+                class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 mb-4 md:mb-0">
+            © 2023 NeuronFRAMES. All rights reserved.
+          </p>
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition duration-300"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition duration-300"
+              >Terms of Service</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition duration-300"
+              >Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+
+      // FAQ toggle functionality
+      document.querySelectorAll(".faq-toggle").forEach((button) => {
+        button.addEventListener("click", () => {
+          const content = button.nextElementSibling;
+          const icon = button.querySelector("i");
+
+          // Toggle content
+          content.classList.toggle("hidden");
+
+          // Rotate icon
+          if (content.classList.contains("hidden")) {
+            icon.classList.remove("rotate-180");
+          } else {
+            icon.classList.add("rotate-180");
+          }
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          }
+        });
+      });
+
+      // Animate progress bars when they come into view
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const progressBar = entry.target.querySelector(".progress-bar");
+              if (progressBar) {
+                progressBar.style.width = progressBar.style.width; // Retrigger animation
+              }
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document.querySelectorAll(".progress-bar").forEach((bar) => {
+        observer.observe(bar.parentElement.parentElement);
+      });
+    </script>
+  </body>
+</html>

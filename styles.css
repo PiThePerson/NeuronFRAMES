@@ -1,0 +1,15 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(
+    270deg,
+    #3ce3a4 0%,
+    #35d8ca 43%,
+    #31d1e1 58%,
+    #2fc9ff 100%
+  );
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+}
